@@ -2,9 +2,9 @@ import telebot
 import requests
 from geopy.geocoders import Nominatim
 
-BOT_TOKEN = 'YOUR_BOT_TOKEN'
+BOT_TOKEN = '7959302797:AAG61VdF1zHnrMireBeGyWA8bNoGliogtKg'
 
-WEATHER_API_KEY = 'YOUR_API_KEY'
+WEATHER_API_KEY = '4e05ec2aed59343312e4fdac8a07ae80'
 
 WEATHER_API_URL = 'https://api.openweathermap.org/data/2.5/weather?'
 
@@ -41,7 +41,7 @@ def get_weather(message):
         feels_like = main['feels_like']
         temp_min = main['temp_min']
         temp_max = main['temp_max']
-        pressure = main['pressure']
+        pressure = int(round(main['pressure'] // 1.333, 0))
         humidity = main['humidity']
         description = data['weather'][0]['description']
         wind_speed = data['wind']['speed']
@@ -54,7 +54,7 @@ def get_weather(message):
         weather_message += f'Ощущается как: {feels_like} °C\n'
         weather_message += f'Минимальная суточная температура: {temp_min} °C\n'
         weather_message += f'Максимальная суточная температура: {temp_max} °C\n'
-        weather_message += f'Давление: {pressure} гПа\n'
+        weather_message += f'Давление: {pressure} мм рт. ст.\n'
         weather_message += f'Влажность: {humidity}%\n'
         weather_message += f'{description.capitalize()}\n'
         weather_message += f'Скорость ветра: {wind_speed} м/с\n'
