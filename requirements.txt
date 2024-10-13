@@ -1,0 +1,12 @@
+APScheduler==3.6.3
+cachetools==4.2.2
+certifi==2024.8.30
+geographiclib==2.0
+geopy==2.4.1
+python-telegram-bot==13.7
+pytz==2024.2
+setuptools==75.1.0
+six==1.16.0
+tornado==6.4.1
+tzdata==2024.2
+tzlocal==5.2
